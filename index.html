@@ -1,24 +1,67 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>LightXcelerate, Inc.</title>
-    <style>
-      body {
-        background-color: #000000; /* Black background */
-        color: #ffffff;            /* White text */
-        font-family: Arial, sans-serif;
-        height: 100vh;             /* Full viewport height */
-        margin: 0;                 /* Reset default margin */
-        display: flex;             /* Center content */
-        align-items: center;       
-        justify-content: center;
-      }
-      h1 {
-        font-size: 3em;            /* Larger font size */
-      }
-    </style>
-  </head>
-  <body>
-    <h1>LightXcelerate, Inc.</h1>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LightXcelerate, Inc.</title>
+  <style>
+    /* Define the circular gradient animation */
+    @keyframes gradientAnimation {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro", "Helvetica Neue", Arial, sans-serif;
+      background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d, #007AFF, #6a0572, #00b894, #fd79a8, #1a2a6c);
+      background-size: 300% 300%;
+      animation: gradientAnimation 50s infinite ease-in-out;
+      color: #fff;
+      height: 85vh;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    
+    main {
+      padding: 20px;
+      max-width: 700px;
+    }
+
+    .vision {
+      font-size: 1.2em;
+      margin-top: 20px;
+    }
+
+    h2 {
+      font-size: 3em;
+      font-weight: bold;
+    }
+
+    footer {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      padding: 10px;
+      font-size: 0.8em;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h2>Welcome to LightXcelerate</h2>
+    <p class="vision">
+      Photonics empowers the next computing paradigm, unlocking unprecedented possibilities for artificial intelligence and paving the path to AGI.
+    </p>
+    <p>Contact us at <a href="mailto:info@lightxcelerate.com" style="color: #fff; text-decoration: underline;">info@lightxcelerate.com</a> to connect!</p>
+  </main>
+  <footer>
+    &copy; 2025 LightXcelerate, Inc. All rights reserved.
+  </footer>
+</body>
 </html>
