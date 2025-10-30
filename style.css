@@ -68,10 +68,23 @@ p {
 }
 
 footer {
-  position: absolute;
+  position: fixed;
   bottom: 0;
+  left: 0;
   width: 100%;
   padding: 10px;
   font-size: 0.8em;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.2);
+  text-align: center;
+  backdrop-filter: blur(6px);
+}
+
+
+.left-align {
+  text-align: left;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.left-align ul {
+  padding-left: 20px;
 }
