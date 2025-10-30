@@ -14,14 +14,105 @@
     <a href="contact.html">Contact</a>
   </nav>
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Technology | LightXcelerate</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav>
+    <a href="index.html">Main</a>
+    <a href="team.html">Team</a>
+    <a href="technology.html" class="active">Technology</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Technology | LightXcelerate</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav>
+    <a href="index.html">Main</a>
+    <a href="team.html">Team</a>
+    <a href="technology.html" class="active">Technology</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
   <main>
-    <h2>Our Technology</h2>
-    <p>LightXcelerate is developing dense micro-VCSEL and photodiode arrays for chip-to-chip optical interconnects, enabling native die-speed optical I/O without SerDes or retimers.</p>
+    <!-- Why Interconnects Matter -->
+    <section id="why-interconnects" class="left-align">
+      <br><br><br><br><br><br>      <br><br><br><br><br><br>
+      <h2 style="text-align:center;">Why Interconnects Matter</h2>
+      <p>
+        Modern AI systems are bottlenecked not by computation, but by <strong>communication</strong>.
+        As training and inference scale to thousands of GPUs and custom accelerators,
+        data movement between chips, modules, and racks dominates total system power and latency.
+      </p>
+      <p>
+        Electrical interconnects — copper traces and SerDes — were never designed for this scale.
+        They now struggle to move data fast enough or far enough without consuming massive power.
+      </p>
+      <ul>
+        <li><strong>Bandwidth has plateaued:</strong> Even at 112&nbsp;Gbps per lane, copper links suffer severe loss and crosstalk, forcing more retimers and equalizers that burn power and add latency.</li>
+        <li><strong>Power dominates:</strong> Each SerDes can consume 10–20&nbsp;W just to move bits across a few centimeters. In large AI pods, interconnect power rivals compute power.</li>
+        <li><strong>Scaling stalls:</strong> As chips multiply within a pod or rack, signal integrity and thermal limits make further scale-up inefficient and unsustainable.</li>
+      </ul>
+      <p>
+        This is the new bottleneck of AI infrastructure: the interconnect fabric.
+        To unlock the next leap in performance and efficiency, the world needs a fundamentally different medium — <strong>light</strong>.
+      </p>
+    </section>
+
+    <!-- Our Technology -->
+    <section id="our-technology" class="left-align">
+      <h2 style="text-align:center;">Our Technology</h2>
+      <p>
+        At <strong>LightXcelerate</strong>, we are pioneering <strong>native optical interconnects</strong>
+        based on high-density <strong>micro-VCSEL</strong> and <strong>photodiode arrays</strong>.
+        By bringing light directly onto the chip package, we eliminate the need for SerDes, retimers,
+        and long electrical channels — enabling <strong>true die-speed optical I/O</strong>.
+      </p>
+      <p>
+        Our platform integrates optical transmitters, receivers, and packaging at wafer scale,
+        allowing chips to communicate optically with minimal conversion loss.
+        The result is a scalable, power-efficient interconnect fabric for the AI era.
+      </p>
+    </section>
+
+    <!-- Advantages -->
+    <section id="advantages" class="left-align">
+      <h2 style="text-align:center;">Advantages</h2>
+      <ul>
+        <li><strong>10× higher bandwidth density</strong> – massively parallel optical lanes at die-edge pitch.</li>
+        <li><strong>Up to 80 % lower I/O power</strong> – photons replace electrons, eliminating equalizers and retimers.</li>
+        <li><strong>Lower latency</strong> – native, clock-synchronous optical paths between dies.</li>
+        <li><strong>Thermal and signal stability</strong> – optical links immune to EMI, crosstalk, and attenuation.</li>
+        <li><strong>Scalable architecture</strong> – extends from chip-to-chip to module-to-rack for wide, composable compute fabrics.</li>
+      </ul>
+      <p>
+        At LightXcelerate, we're building the interconnect fabric that lets performance scale with every chip added —
+        <strong>data moving at the speed of light.</strong>
+              <br><br><br><br><br><br>    
+      </p>
+    </section>
   </main>
 
   <footer>
     &copy; 2025 LightXcelerate, Inc. All rights reserved.
   </footer>
+
+  <script src="nav.js"></script>
+</body>
+</html>
+
 
   <script src="nav.js"></script>
 </body>
