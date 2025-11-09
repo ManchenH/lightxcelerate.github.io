@@ -4,6 +4,11 @@
   100% { background-position: 0% 50%; }
 }
 
+/* Global box-sizing for better responsive design */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 body {
   font-family: -apple-system, BlinkMacSystemFont, "SF Pro", "Helvetica Neue", Arial, sans-serif;
   background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d, #007AFF, #6a0572, #00b894, #fd79a8, #1a2a6c);
@@ -16,6 +21,11 @@ body {
   flex-direction: column;
   align-items: center;
   text-align: center;
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 nav {
@@ -27,8 +37,10 @@ nav {
   z-index: 1000;
   display: flex;
   justify-content: center;
+  align-items: center;
   padding: 12px 0;
   backdrop-filter: blur(10px);
+  box-sizing: border-box;
 }
 
 nav a {
@@ -37,6 +49,12 @@ nav a {
   margin: 0 25px;
   font-weight: 500;
   transition: color 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  min-height: 44px;
+  padding: 4px 8px;
 }
 
 nav a:hover {
@@ -63,6 +81,8 @@ main {
   justify-content: center;
   align-items: center;
   flex: 1;
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 h2 {
@@ -136,6 +156,12 @@ footer {
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+/* Link styling for better mobile experience */
+a {
+  word-wrap: break-word;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0.2);
+}
+
 /* Centered section for index page */
 .center-section {
   text-align: center;
@@ -145,4 +171,192 @@ footer {
 
 .center-section p {
   text-align: center;
+}
+
+/* ===== Responsive Design ===== */
+
+/* Tablet and below (max-width: 768px) */
+@media (max-width: 768px) {
+  nav {
+    padding: 10px 0;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  nav a {
+    margin: 5px 12px;
+    font-size: 0.9em;
+    padding: 4px 6px;
+    min-height: 40px;
+  }
+
+  main {
+    margin-top: 70px;
+    padding-top: 30px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 80px;
+  }
+
+  h2 {
+    font-size: 2.2em;
+  }
+
+  p {
+    font-size: 1.1em;
+  }
+
+  .section {
+    padding: 20px 22px;
+    margin: 20px auto;
+  }
+
+  footer {
+    font-size: 0.75em;
+    padding: 8px;
+  }
+}
+
+/* Mobile devices (max-width: 480px) */
+@media (max-width: 480px) {
+  nav {
+    padding: 8px 0;
+  }
+
+  nav a {
+    margin: 4px 6px;
+    font-size: 0.85em;
+    padding: 4px 6px;
+    min-height: 38px;
+  }
+
+  nav a.active {
+    padding-bottom: 2px;
+    border-bottom-width: 1.5px;
+  }
+
+  main {
+    margin-top: 65px;
+    padding-top: 20px;
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-bottom: 70px;
+  }
+
+  h2 {
+    font-size: 1.8em;
+    margin-bottom: 8px;
+  }
+
+  p {
+    font-size: 1em;
+    line-height: 1.5;
+  }
+
+  .section {
+    padding: 16px 18px;
+    margin: 16px auto;
+    border-radius: 12px;
+  }
+
+  .section h2 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+  }
+
+  .section h3 {
+    font-size: 1.3em;
+  }
+
+  .left-align {
+    max-width: 100%;
+  }
+
+  .left-align ul {
+    padding-left: 18px;
+  }
+
+  .left-align ul li {
+    margin: 6px 0;
+    font-size: 0.95em;
+  }
+
+  .left-align p {
+    margin: 10px 0 0 0;
+  }
+
+  .image-container {
+    margin: 16px 0;
+  }
+
+  .content-image {
+    border-radius: 8px;
+  }
+
+  footer {
+    font-size: 0.7em;
+    padding: 6px 8px;
+  }
+
+  /* Adjust button styling on mobile - targets white background buttons */
+  a[style*="background: #ffffff"],
+  a[style*="background:#ffffff"] {
+    padding: 10px 16px !important;
+    font-size: 0.9em !important;
+    min-height: 44px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  
+  /* Improve email link readability on mobile */
+  a[href^="mailto:"] {
+    word-break: break-all;
+  }
+}
+
+/* Very small mobile devices (max-width: 320px) */
+@media (max-width: 320px) {
+  nav a {
+    margin: 3px 4px;
+    font-size: 0.75em;
+    padding: 3px 5px;
+    min-height: 36px;
+  }
+
+  h2 {
+    font-size: 1.5em;
+  }
+
+  p {
+    font-size: 0.95em;
+  }
+
+  .section {
+    padding: 14px 16px;
+  }
+
+  .section h2 {
+    font-size: 1.5em;
+  }
+
+  .section h3 {
+    font-size: 1.2em;
+  }
+}
+
+/* Landscape orientation on mobile */
+@media (max-width: 768px) and (orientation: landscape) {
+  nav {
+    padding: 8px 0;
+  }
+
+  nav a {
+    margin: 3px 10px;
+  }
+
+  main {
+    margin-top: 60px;
+    padding-top: 20px;
+  }
 }
