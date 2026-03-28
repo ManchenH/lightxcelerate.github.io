@@ -2,10 +2,10 @@ import { motion } from "motion/react";
 import { MoveRight, Network, Layers, Server, Activity, ArrowRightLeft, Cpu, Database, Cable, Linkedin } from "lucide-react";
 import { NetworkGraphic } from "./components/NetworkGraphic";
 import { ArchitectureDiagram } from "./components/ArchitectureDiagram";
-import imgMicroVCSEL from "asset/9cd99a06fa1c9dda098e33591e47594b3739ce89.png";
-import imgSEM from "asset/6351bf30dce9d2c3884750b299c41073f676c97b.png";
-import imgNRZ from "asset/ce95939bd73893bce7b3ce011262558eb0f56a0f.png";
-import imgPAM4 from "asset/2b5413a8393716b0d2e0519b63576c3bbe42aee5.png";
+import imgMicroVCSEL from "./asset/9cd99a06fa1c9dda098e33591e47594b3739ce89.png";
+import imgSEM from "./asset/6351bf30dce9d2c3884750b299c41073f676c97b.png";
+import imgNRZ from "./asset/ce95939bd73893bce7b3ce011262558eb0f56a0f.png";
+import imgPAM4 from "./asset/2b5413a8393716b0d2e0519b63576c3bbe42aee5.png";
 
 function Navbar() {
   return (
