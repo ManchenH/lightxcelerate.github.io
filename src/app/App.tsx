@@ -1,7 +1,9 @@
+import { useState } from "react";
 import { motion } from "motion/react";
-import { MoveRight, Network, Layers, Server, Activity, ArrowRightLeft, Cpu, Database, Cable, Linkedin } from "lucide-react";
+import { MoveRight, Network, Layers, Server, Activity, ArrowRightLeft, Cpu, Database, Cable, Linkedin, ArrowUpRight, MapPin, CheckCircle2 } from "lucide-react";
 import { NetworkGraphic } from "./components/NetworkGraphic";
 import { ArchitectureDiagram } from "./components/ArchitectureDiagram";
+import { ApplicationDialog } from "./components/ApplicationDialog";
 import imgMicroVCSEL from "../assets/9cd99a06fa1c9dda098e33591e47594b3739ce89.png";
 import imgSEM from "../assets/6351bf30dce9d2c3884750b299c41073f676c97b.png";
 import imgNRZ from "../assets/ce95939bd73893bce7b3ce011262558eb0f56a0f.png";
@@ -18,6 +20,7 @@ function Navbar() {
         <a href="#vision" className="hover:text-white transition-colors">Vision</a>
         <a href="#fabric" className="hover:text-white transition-colors">Scale-Up Fabric</a>
         <a href="#technology" className="hover:text-white transition-colors">Technology</a>
+        <a href="#careers" className="hover:text-white transition-colors">Careers</a>
       </div>
       <div className="flex items-center gap-4">
         <a href="https://www.linkedin.com/company/lightxcelerate" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-cyan-400 transition-colors hidden md:flex items-center justify-center w-9 h-9 rounded-full bg-white/5 border border-white/10 hover:border-cyan-500/50 hover:bg-cyan-500/10" aria-label="LinkedIn">
@@ -459,6 +462,98 @@ function TeamSection() {
   );
 }
 
+function CareersSection() {
+  const jobs = [
+    {
+      title: "Optoelectronic Device Engineer",
+      type: "Full-time",
+      location: "Taiwan",
+      desc: "Design and characterize high-speed micro-VCSEL arrays, from epitaxial structure to wafer-level testing."
+    },
+    {
+      title: "Advanced Packaging Engineer",
+      type: "Full-time",
+      location: "Taiwan",
+      desc: "Drive heterogeneous III-V-on-Si bonding and 2.5D/3D integration from prototype to production."
+    },
+    {
+      title: "Mixed-Signal IC Designer",
+      type: "Full-time",
+      location: "Taiwan",
+      desc: "Design high-speed mixed-signal circuits for ultra-low-power, terabit-scale optical links."
+    }
+  ];
+
+  const [applyingFor, setApplyingFor] = useState<string | null>(null);
+  // FormSubmit redirects back here with ?applied=1 after a successful submission
+  const [applied, setApplied] = useState(() => new URLSearchParams(window.location.search).has("applied"));
+
+  return (
+    <section id="careers" className="py-32 bg-[#0a0a0a] border-t border-white/5 relative overflow-hidden">
+      <div className="absolute top-1/2 right-0 w-[600px] h-[600px] bg-cyan-900/10 rounded-full blur-[120px] pointer-events-none -translate-y-1/2 translate-x-1/3" />
+
+      <div className="container mx-auto px-6 md:px-12 relative z-10">
+        <div className="max-w-3xl mb-16">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-cyan-500/30 bg-cyan-500/10 text-cyan-400 text-xs font-medium mb-6 tracking-wide">
+            <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
+            WE'RE HIRING
+          </div>
+          <h2 className="text-3xl md:text-5xl font-semibold text-white mb-6">
+            Join us in building<br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">AI's optical future.</span>
+          </h2>
+          <p className="text-lg text-slate-400">
+            We're looking for engineers who want to turn breakthrough physics into production hardware. Small team, hard problems, and real ownership from day one.
+          </p>
+        </div>
+
+        {applied && (
+          <div className="mb-12 flex items-start gap-3 p-5 rounded-xl border border-emerald-500/30 bg-emerald-500/10">
+            <CheckCircle2 className="text-emerald-400 shrink-0 mt-0.5" size={20} />
+            <p className="flex-1 text-slate-200">Thank you for applying! We've received your application and will be in touch by email.</p>
+            <button onClick={() => setApplied(false)} className="text-sm text-slate-400 hover:text-white transition-colors">Dismiss</button>
+          </div>
+        )}
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+          {jobs.map((job, i) => (
+            <motion.button
+              key={i}
+              type="button"
+              onClick={() => setApplyingFor(job.title)}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1 }}
+              className="group relative flex flex-col text-left p-8 rounded-2xl bg-slate-900/30 border border-white/5 hover:border-cyan-500/30 transition-colors overflow-hidden cursor-pointer"
+            >
+              <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+              <div className="relative flex items-start justify-between gap-4 mb-4">
+                <h3 className="text-xl font-medium text-white">{job.title}</h3>
+                <ArrowUpRight className="text-slate-500 group-hover:text-cyan-400 transition-colors shrink-0" size={20} />
+              </div>
+              <p className="relative text-slate-400 text-sm leading-relaxed mb-6">{job.desc}</p>
+              <div className="relative mt-auto flex flex-wrap gap-2 text-xs font-medium">
+                <span className="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-slate-300">{job.type}</span>
+                <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-slate-300"><MapPin size={12} />{job.location}</span>
+              </div>
+            </motion.button>
+          ))}
+        </div>
+
+        <p className="text-slate-400">
+          Don't see your role?{" "}
+          <button type="button" onClick={() => setApplyingFor("General Application")} className="text-cyan-400 hover:text-cyan-300 transition-colors">
+            Send us a general application
+          </button>.
+        </p>
+      </div>
+
+      <ApplicationDialog position={applyingFor} onOpenChange={(open) => !open && setApplyingFor(null)} />
+    </section>
+  );
+}
+
 function Footer() {
   return (
     <footer id="contact" className="py-24 bg-black border-t border-white/5 relative overflow-hidden">
@@ -506,6 +601,7 @@ export default function App() {
         <HardwareSection />
         <SignalTestingSection />
         <TeamSection />
+        <CareersSection />
       </main>
       <Footer />
     </div>
