@@ -1,9 +1,8 @@
-import { useState } from "react";
 import { motion } from "motion/react";
-import { MoveRight, Network, Layers, Server, Activity, ArrowRightLeft, Cpu, Database, Cable, Linkedin, ArrowUpRight, MapPin, CheckCircle2 } from "lucide-react";
+import { MoveRight, Network, Layers, Server, Activity, ArrowRightLeft, Cpu, Database, Cable, Linkedin, ArrowUpRight, MapPin } from "lucide-react";
 import { NetworkGraphic } from "./components/NetworkGraphic";
 import { ArchitectureDiagram } from "./components/ArchitectureDiagram";
-import { ApplicationDialog } from "./components/ApplicationDialog";
+import { openApplication } from "./components/tallyApply";
 import imgMicroVCSEL from "../assets/9cd99a06fa1c9dda098e33591e47594b3739ce89.png";
 import imgSEM from "../assets/6351bf30dce9d2c3884750b299c41073f676c97b.png";
 import imgNRZ from "../assets/ce95939bd73893bce7b3ce011262558eb0f56a0f.png";
@@ -484,10 +483,6 @@ function CareersSection() {
     }
   ];
 
-  const [applyingFor, setApplyingFor] = useState<string | null>(null);
-  // FormSubmit redirects back here with ?applied=1 after a successful submission
-  const [applied, setApplied] = useState(() => new URLSearchParams(window.location.search).has("applied"));
-
   return (
     <section id="careers" className="py-32 bg-[#0a0a0a] border-t border-white/5 relative overflow-hidden">
       <div className="absolute top-1/2 right-0 w-[600px] h-[600px] bg-cyan-900/10 rounded-full blur-[120px] pointer-events-none -translate-y-1/2 translate-x-1/3" />
@@ -507,20 +502,12 @@ function CareersSection() {
           </p>
         </div>
 
-        {applied && (
-          <div className="mb-12 flex items-start gap-3 p-5 rounded-xl border border-emerald-500/30 bg-emerald-500/10">
-            <CheckCircle2 className="text-emerald-400 shrink-0 mt-0.5" size={20} />
-            <p className="flex-1 text-slate-200">Thank you for applying! We've received your application and will be in touch by email.</p>
-            <button onClick={() => setApplied(false)} className="text-sm text-slate-400 hover:text-white transition-colors">Dismiss</button>
-          </div>
-        )}
-
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
           {jobs.map((job, i) => (
             <motion.button
               key={i}
               type="button"
-              onClick={() => setApplyingFor(job.title)}
+              onClick={() => openApplication(job.title)}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -543,13 +530,11 @@ function CareersSection() {
 
         <p className="text-slate-400">
           Don't see your role?{" "}
-          <button type="button" onClick={() => setApplyingFor("General Application")} className="text-cyan-400 hover:text-cyan-300 transition-colors">
+          <button type="button" onClick={() => openApplication("General Application")} className="text-cyan-400 hover:text-cyan-300 transition-colors">
             Send us a general application
           </button>.
         </p>
       </div>
-
-      <ApplicationDialog position={applyingFor} onOpenChange={(open) => !open && setApplyingFor(null)} />
     </section>
   );
 }
