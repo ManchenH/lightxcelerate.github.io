@@ -56,7 +56,7 @@ function Hero() {
             AI's next leap runs on <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">light.</span>
           </h1>
           <p className="text-lg md:text-xl text-slate-400 mb-10 leading-relaxed max-w-xl">
-            LightXcelerate engineers optical chiplets that replace electrical I/O at the package edge — delivering terabit-class bandwidth, sub-2 pJ/bit efficiency, and 50-meter reach to unify GPUs, memory, and switches into a single optical fabric.
+            LightXcelerate engineers optical chiplets that replace electrical I/O at the package edge — delivering terabit-class bandwidth, sub-1.5 pJ/bit efficiency, and 50-meter reach to unify GPUs, memory, and switches into a single optical fabric.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <a href="#fabric" className="px-6 py-3 rounded-full bg-white text-black font-medium flex items-center justify-center gap-2 hover:bg-slate-200 transition-colors">
@@ -203,7 +203,7 @@ function TechnologySection() {
     { title: "Universal Protocol Support", desc: "Native support for UCIe, UALink, PCIe, CXL, and NVLink — covering scale-in, scale-up, and scale-out interconnect use cases without protocol conversion." },
     { title: "Package-Edge Co-Integration", desc: "Placed directly alongside the processor die using standard electrical interfaces. No external transceiver cages, no additional PCB signal routing." },
     { title: "Terabit Bandwidth Density", desc: "Record-breaking I/O packed into millimeters of chip edge — delivering the data rates that modern AI accelerators demand at full throughput." },
-    { title: "Sub-2 pJ/bit Efficiency", desc: "Less than 2 pJ/bit end-to-end. An order of magnitude more efficient than pluggable transceivers, preserving power budget for compute." },
+    { title: "Sub-1.5 pJ/bit Efficiency", desc: "Less than 1.5 pJ/bit end-to-end. An order of magnitude more efficient than pluggable transceivers, preserving power budget for compute." },
     { title: "50-Meter Optical Reach", desc: "High-fidelity signal transmission up to 50 meters over single-mode fiber, enabling rack-to-rack and cluster-scale disaggregation without repeaters." }
   ];
 
@@ -466,19 +466,19 @@ function CareersSection() {
     {
       title: "Optoelectronic Device Engineer",
       type: "Full-time",
-      location: "Taiwan",
+      location: "Taiwan · US",
       desc: "Design and characterize high-speed micro-VCSEL arrays, from epitaxial structure to wafer-level testing."
     },
     {
       title: "Advanced Packaging Engineer",
       type: "Full-time",
-      location: "Taiwan",
+      location: "Taiwan · US",
       desc: "Drive heterogeneous III-V-on-Si bonding and 2.5D/3D integration from prototype to production."
     },
     {
       title: "Mixed-Signal IC Designer",
       type: "Full-time",
-      location: "Taiwan",
+      location: "Taiwan · US",
       desc: "Design high-speed mixed-signal circuits for ultra-low-power, terabit-scale optical links."
     }
   ];

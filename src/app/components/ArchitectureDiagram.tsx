@@ -113,7 +113,7 @@ export function ArchitectureDiagram() {
       {/* Optical Links (SVG lines) - Desktop Only */}
       <div className="absolute inset-0 z-10 hidden md:block pointer-events-none">
         {/* Inline Labels for Data Paths */}
-        <div className="absolute top-1/2 left-[24%] -translate-x-1/2 -translate-y-8 text-[9px] text-violet-300/80 font-mono tracking-widest uppercase">Sub-2 pJ/bit PCIe/CXL</div>
+        <div className="absolute top-1/2 left-[24%] -translate-x-1/2 -translate-y-8 text-[9px] text-violet-300/80 font-mono tracking-widest uppercase">Sub-1.5 pJ/bit PCIe/CXL</div>
         <div className="absolute top-1/2 right-[24%] translate-x-1/2 -translate-y-8 text-[9px] text-amber-300/80 font-mono tracking-widest uppercase">Scale-Up Interface</div>
         <div className="absolute top-[70%] left-[53%] text-[9px] text-cyan-300/80 font-mono tracking-widest uppercase">Scale-IN GPU-to-GPU</div>
 
